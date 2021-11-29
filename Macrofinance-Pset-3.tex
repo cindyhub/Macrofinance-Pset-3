@@ -1,0 +1,191 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[bottom=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{bbm}
+\usepackage{cancel}
+
+\usepackage[utf8]{inputenc}
+
+\title{ECON236/FIN637: HW 3}
+\author{Cindy Chung and Emma Rockall}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question a}
+The optimization of the banker is as follows. Per the email exchange, we assume the wealth term of the banker does not include the deposits of the household as the households own the deposits. We also assume the banker gets to keep all excess return from any investments of the household's deposits (and per the prompt, we assume bankers issue interest $r_t$ on deposits to the household).
+\[
+\max_{c_t, \alpha_t, \beta_t} E_{0}\left[\int_{t=0}^{\infty} e^{-\rho t} \ln c_{t} d t\right]
+\]
+with the controls being how much to consume in period $t$ and how much of their own wealth to invest in the risky asset, and how much of the household's wealth (in the form of the deposits) to invest in the risky asset vs the bond holdings. The dynamic budget constraint of the banker is:
+\[ \begin{aligned}
+    d w_t &= \alpha_t (d R_t - r_t d t)  + r_t w_t d_t + \beta_t (d R_t - r_t d t)  + \cancel{r_t D_t d_t} - \cancel{r_t D_t d_t} - c_t d t \\
+    & \iff \boxed{d w_t= \alpha_t (d R_t - r_t d t)  + r_t w_t d_t + \beta_t (d R_t - r_t d t) - c_t d t }
+\end{aligned} \]
+% \[
+% \begin{aligned}
+%     d w_t &= \eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  +  \cancel{r_t D_t d t} - c_t d t \cancel{- r_t D_t d t}\\
+% \iff & \boxed{d w_t = \eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  - c_t d t} %ok i am fairly certain on this one...
+% \end{aligned}
+% \]
+where $\boxed{d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t}}$.
+% you should ask arvind about if all deposits get invested to risky asset-- wait no, that's a control!
+The household's dynamic budget constraint is:
+\[
+\boxed{d w_t^h = r_t D_t d t  - c_t^h d t + d L_t}  
+\]
+\section*{Question b}
+The consumption goods market clearing condition is:
+\[
+\boxed{c_t + c_t^h = Y_t + L_t    }
+\]
+The asset market clearing condition is:
+\[
+\boxed{w_t + w_t^h = P_t    }
+\]
+\section*{Question c}
+Since the banker's utility flow is in log utility form, we can guess and verify a value function of the form $v(w, Y)=A \ln w+B f(Y)$ as in the notes and from lecture, we derived that optimal consumption for the log utility case is: $\boxed{c_{t}=\rho w_{t}}$.
+
+The consumption rule of the household is provided in the prompt: $\boxed{c_t^h = \rho^h w^h_t}$.
+
+We then use the market clearing conditions to solve for $P_t$ as a function of the state variables. We have the asset market clearing condition and from the goods market clearing condition, we know that $c_t^h = Y_t + L_t - c_t$:
+\[
+\begin{aligned}
+    P_t = w_t^h + w_t = \frac{c_t^h}{\rho^h} + w_t &= \frac{Y_t + L_t - c_t}{\rho^h} + w_t\\
+    &= \frac{Y_t + L_t - c_t}{\rho^h} + w_t\\
+    &= \frac{Y_t + L_t - \rho w_t}{\rho^h} + w_t\\
+    &= \frac{Y_t + L_t}{\rho^h} + w_t\left(1 - \frac{\rho}{\rho^h}\right)
+\end{aligned}
+\]
+Therefore we get:
+\[
+P_{t}=\frac{D_{t}}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) w_{t}
+\]
+and we use that $\eta_t = \frac{P_t}{w_t}$ from the prompt to ensure we are only using state variables:
+\[
+\begin{aligned}
+    P_{t}=\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) \frac{P_t}{\eta_t}\\
+    \iff \eta_t P_t = \eta_t \frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) P_t\\
+    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta - 1 + \frac{\rho}{\rho^h}}}
+\end{aligned}
+\]
+\section*{Question d}
+Now we conjecture that $P_t$ follows the process:
+\[
+\begin{aligned}
+    &\frac{d P_{t}}{P_{t}}=\mu_{P, t} d t+\sigma_{P, t} d Z_{t}\\
+    % % \iff P_t = \frac{d P_t}{\mu_{P, t} d t + \sigma_{P, t} d Z_t}
+    % \iff & d P_t = P_t \mu_{P, t} d t + \sigma_{P, t} d Z_t\\
+    % \iff & P_t = P_0 + \int_0^t \mu_{P, t} d t+ \int_0^t \sigma_{P, t} d Z_t
+\end{aligned}
+\]
+Then we can solve for the equilibrium $\beta_t$ amount of the household's deposits for the banker to invest in the risky asset. This is very similar to what we had in lecture in that the HJB is:
+\[
+0 = \max_{c_t, \beta_t}E_t[e^{-\rho t}u(c_t) + D V(w_t, Y_t, t) d t]    
+\]
+where $u(c_t) = \ln(c_t) $, $w_t$ is the endogenous state, and $Y_t$ is the exogenous state. The form of the value function is similarly:
+\[
+V(w_t, Y_t, t) = e^{-\rho t} v(w_t, Y_t)    
+\]
+so that:
+\textbf{insert equation here on slide 18} 
+Per the slides, one can conjecture and verify the following form for $v(w, Y)$:
+\textbf{insert conjectured v eqn on slide 19}
+
+so following similar steps to the lecture, we conclude the following optimal $\beta_t$:
+\[
+\beta_t = \frac{D_t + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}    
+\]
+% So $dR_t$ can be expressed as:
+% \[
+%     d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t} =  \frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  
+% \]
+Under the asset market clearing condition we have:
+\[\begin{aligned}
+    &w_t + w_t^h = P_t   \\ 
+    \iff & w_t + w_t^h = \frac{d P_t}{\mu_{P, t} d t + \sigma_{P, t} d Z_t}\\
+    \iff & \mu_{P, t} d t + \sigma_{P, t} d Z_t = \frac{d P_t}{w_t + w_t^h}
+\end{aligned}\]
+So the relation we get between $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+\[
+    \mu_{P, t} d t + \sigma_{P, t} d Z_t =     
+\]
+\textbf{Option 2 starts here:}
+\[
+\begin{aligned}
+    &w_t + w_t^h = P_t   \\ 
+    \iff & d w_t + d w_t^h = d P_t \\
+    \iff & (\eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t) - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) =  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t} \\ %edit this and below if you have to change dwt
+    \iff &(\eta_t  d R_t - \eta_t r_t d t  + r_t w_t d t + \beta_t D_t d R_t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
+    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
+    \iff &((\eta_t + \beta_t D_t)  d R_t - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
+    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
+    \iff &((\eta_t + \beta_t D_t)  (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  ) - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
+    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
+    \iff & (\eta_t + \beta_t D_t)  (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  )  + K_t d t=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t} \quad \text{(condensing terms)}\\
+    \iff & (\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + (\eta_t + \beta_t D_t) (\mu_{P, t} d t+\sigma_{P, t} d Z_{t}) + K_t d t= P_t (\mu_{P, t} d t+\sigma_{P, t} d Z_{t})\\
+    \iff & (\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t= (P_t - \eta_t - \beta_t D_t)(\mu_{P, t} d t+\sigma_{P, t} d Z_{t})
+\end{aligned}
+\]
+where $K_t d t= - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t)$.
+So the relation we get between $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+\[
+    \mu_{P, t} d t+\sigma_{P, t} d Z_{t} = \frac{(\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t}{(P_t - \eta_t - \beta_t D_t)}
+\]
+and where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
+\section*{Question e}
+We use the goods market clearing condition and differentiate; then we plug in the dynamic budget constraints. Note that with the above conjectured process for $P_t$,
+$dR_t$ can be expressed as:
+\[
+    d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t} =  \frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  
+\]
+Under the goods market clearing condition we have (where per the email exchange we work with the case where $g_Y = g_L = g$):
+\[
+    \begin{aligned}
+        &c_t + c_t^h = Y_t + L_t\\
+        \iff & \rho w_t + \rho^h w^h = Y_t + L_t\\
+        \implies & \rho d w_t + \rho^h d w^h = d Y_t + d L_t  = Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + \sigma_L L_t d Z_t\\ %edit below if you have to change dwt
+        \iff &\rho (\eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t)\\
+        &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
+        \iff & \rho \eta_t d R_t - \rho \eta_t r_t d t + r_t w_t d t + \beta D_t d R_t  - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t\\
+        &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
+        \iff & - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - Y_t g d t - Y_t \sigma_Y d Z_t - L_t g d t - L_t \sigma_L d Z_t\\
+        &= -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) d R_t = -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t})
+    \end{aligned}\]
+    
+    So we get:
+    \[
+    \begin{aligned}
+        &\mu_{P, t} d t + \sigma_{P, t } d Z_t =  \frac{-1}{\rho \eta_t + \beta D_t}(\kappa_{1,t} d t + \kappa_{2,t} d Z_t) - \frac{Y_t}{P_t} d t  
+    \end{aligned}
+    \]
+    where:
+    \[
+    (\kappa_{1,t} d t + \kappa_{2,t} d Z_t) = - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - (Y_t + L_t) g d t  - Y_t \sigma_Y d Z_t- L_t \sigma_L d Z_t    
+    \]
+    Matching coefficients on the $dZ_t$ terms we get:
+\[
+    \begin{aligned}
+        \sigma_{P, t}  = \frac{Y_t \sigma_Y + L_t \sigma_L}{\rho \eta_t + \beta D_t}
+    \end{aligned}
+\]
+where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
+\section*{Question f}
+We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, t} + \frac{Y_t}{P_t} - r_t$. To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+\[\begin{aligned}
+    \mu_{P, t} d t+\sigma_{P, t} d Z_{t} = \frac{(\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t}{(P_t - \eta_t - \beta_t D_t)}\\
+    \iff 
+\end{aligned}\]
+\section*{Question g}
+
+\end{document}
