@@ -205,11 +205,23 @@ Under the goods market clearing condition we have (where per the email exchange 
 % \]
 % where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
 \section*{Question f}
-We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, t} + \frac{Y_t}{P_t} - r_t$. To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, t} + \frac{Y_t}{P_t} - r_t$. Note from Question d, the relation we have between $\mu_{P, t}$ and $\sigma_{P, t}$ is:
+\[
+    \begin{aligned}
+        \frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2} = P_t \iff \frac{Y_t}{P_t} + \mu_{P, t} - r_t = (\sigma_{P, t})^2 P_t\\
+        \iff \pi_{R, t} = (\sigma_{P, t})^2 P_t\\
+        \iff \pi_{R, t} = (\sigma_{P, t})^2 P_t
+    \end{aligned}    
+\]
+Then using our expression from Questions c and e we get:
 \[\begin{aligned}
-    \mu_{P, t} d t+\sigma_{P, t} d Z_{t} = \frac{(\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t}{(P_t - \eta_t - \beta_t D_t)}\\
-    \iff 
+    \left(\left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\eta_t - 1 + \frac{\rho}{\rho^h}}{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t} \right)\right)^2 
 \end{aligned}\]
+% To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+% \[\begin{aligned}
+%     \mu_{P, t} d t+\sigma_{P, t} d Z_{t} = \frac{(\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t}{(P_t - \eta_t - \beta_t D_t)}\\
+%     \iff 
+% \end{aligned}\]
 \section*{Question g}
 
 \end{document}
