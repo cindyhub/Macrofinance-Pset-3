@@ -27,10 +27,10 @@ The optimization of the banker is as follows. Per the email exchange, we assume 
 \[
 \max_{c_t, \alpha_t, \beta_t} E_{0}\left[\int_{t=0}^{\infty} e^{-\rho t} \ln c_{t} d t\right]
 \]
-with the controls being how much to consume in period $t$ and how much of their own wealth to invest in the risky asset, and how much of the household's wealth (in the form of the deposits) to invest in the risky asset vs the bond holdings. The dynamic budget constraint of the banker is:
+with the controls being how much to consume in period $t$, how much of their own wealth to invest in the risky asset ($\alpha_t$), and how much of the household's wealth (in the form of the deposits) to invest in the risky asset vs the bond holdings ($\beta_t$). The dynamic budget constraint of the banker is:
 \[ \begin{aligned}
-    d w_t &= \alpha_t (d R_t - r_t d t)  + r_t w_t d_t + \beta_t (d R_t - r_t d t)  + \cancel{r_t D_t d_t} - \cancel{r_t D_t d_t} - c_t d t \\
-    & \iff \boxed{d w_t= \alpha_t (d R_t - r_t d t)  + r_t w_t d_t + \beta_t (d R_t - r_t d t) - c_t d t }
+    d w_t &= \epsilon_t (d R_t - r_t d t)  + r_t w_t d_t + \cancel{r_t D_t d_t} - \cancel{r_t D_t d_t} - c_t d t \\
+    & \iff \boxed{d w_t= \epsilon_t (d R_t - r_t d t)  + r_t w_t d_t - c_t d t }
 \end{aligned} \]
 % \[
 % \begin{aligned}
@@ -38,7 +38,7 @@ with the controls being how much to consume in period $t$ and how much of their 
 % \iff & \boxed{d w_t = \eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  - c_t d t} %ok i am fairly certain on this one...
 % \end{aligned}
 % \]
-where $\boxed{d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t}}$.
+where $\boxed{d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t}}$ and $\boxed{\epsilon_t = \alpha_tw_t + \beta_tD_t}$.
 % you should ask arvind about if all deposits get invested to risky asset-- wait no, that's a control!
 The household's dynamic budget constraint is:
 \[
