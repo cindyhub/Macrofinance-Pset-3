@@ -49,7 +49,15 @@ The consumption goods market clearing condition is:
 \[
 \boxed{c_t + c_t^h = Y_t + L_t    }
 \]
-The asset market clearing condition is:
+There are 2 asset market clearing conditions here. Following Basak and Cuoco, we assume the bond is in zero net supply, so the bond market clearing conditions are:
+\[
+\alpha_t=\beta_t=1
+\]
+We also normalise the number of stocks to 1, so the risky asset clearing condition is:
+\[
+\alpha_tw_t + \beta_tw^h_t = P_t
+\]
+Taking these conditions together gives us a single asset market clearing condition:
 \[
 \boxed{w_t + w_t^h = P_t    }
 \]
@@ -76,7 +84,7 @@ and we use that $\eta_t = \frac{P_t}{w_t}$ from the prompt to ensure we are only
 \begin{aligned}
     P_{t}=\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) \frac{P_t}{\eta_t}\\
     \iff \eta_t P_t = \eta_t \frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) P_t\\
-    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta - 1 + \frac{\rho}{\rho^h}}}
+    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta_t - 1 + \frac{\rho}{\rho^h}}}
 \end{aligned}
 \]
 \section*{Question d}
@@ -89,9 +97,9 @@ Now we conjecture that $P_t$ follows the process:
     % \iff & P_t = P_0 + \int_0^t \mu_{P, t} d t+ \int_0^t \sigma_{P, t} d Z_t
 \end{aligned}
 \]
-Then we can solve for the equilibrium $\beta_t$ amount of the household's deposits for the banker to invest in the risky asset. This is very similar to what we had in lecture in that the HJB is:
+Then we can solve for the equilibrium $\epsilon_t$ total amount invested in the risky asset. This is very similar to what we had in lecture in that the HJB is:
 \[
-0 = \max_{c_t, \beta_t}E_t[e^{-\rho t}u(c_t) + D V(w_t, Y_t, t) d t]    
+0 = \max_{c_t, \epsilon_t}E_t[e^{-\rho t}u(c_t) + \mathcal{D} V(w_t, Y_t, t) d t]    
 \]
 where $u(c_t) = \ln(c_t) $, $w_t$ is the endogenous state, and $Y_t$ is the exogenous state. The form of the value function is similarly:
 \[
@@ -102,9 +110,9 @@ so that:
 Per the slides, one can conjecture and verify the following form for $v(w, Y)$:
 \textbf{insert conjectured v eqn on slide 19}
 
-so following similar steps to the lecture, we conclude the following optimal $\beta_t$:
+so following similar steps to the lecture, we conclude the following optimal $\epsilon_t$:
 \[
-\beta_t = \frac{D_t + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}    
+\epsilon_t = \frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}    
 \]
 % So $dR_t$ can be expressed as:
 % \[
@@ -112,11 +120,10 @@ so following similar steps to the lecture, we conclude the following optimal $\b
 % \]
 Under the asset market clearing condition we have:
 \[\begin{aligned}
-    &w_t + w_t^h = P_t   \\ 
-    \iff & w_t + w_t^h = \frac{d P_t}{\mu_{P, t} d t + \sigma_{P, t} d Z_t}\\
-    \iff & \mu_{P, t} d t + \sigma_{P, t} d Z_t = \frac{d P_t}{w_t + w_t^h}
+   &\epsilon_t = w_t + w_t^h = P_t   \\ 
+    \iff &\frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2} = P_t
 \end{aligned}\]
-So the relation we get between $\mu_{P, t}$ and $\sigma_{P, t }$ is:
+Using our expression for $P_t$ from (c), we can then write the relation between $\mu_{P, t}$ and $\sigma_{P, t }$ in state variables as:
 \[
     \mu_{P, t} d t + \sigma_{P, t} d Z_t =     
 \]
