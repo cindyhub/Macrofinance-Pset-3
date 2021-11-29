@@ -76,7 +76,7 @@ and we use that $\eta_t = \frac{P_t}{w_t}$ from the prompt to ensure we are only
 \begin{aligned}
     P_{t}=\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) \frac{P_t}{\eta_t}\\
     \iff \eta_t P_t = \eta_t \frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) P_t\\
-    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta - 1 + \frac{\rho}{\rho^h}}}
+    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta_t - 1 + \frac{\rho}{\rho^h}}}
 \end{aligned}
 \]
 \section*{Question d}
@@ -150,36 +150,75 @@ $dR_t$ can be expressed as:
     d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t} =  \frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  
 \]
 Under the goods market clearing condition we have (where per the email exchange we work with the case where $g_Y = g_L = g$):
+% \[
+%     \begin{aligned}
+%         &c_t + c_t^h = Y_t + L_t\\
+%         \iff & \rho w_t + \rho^h w^h = Y_t + L_t\\
+%         \implies & \rho d w_t + \rho^h d w^h = d Y_t + d L_t  = Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + \sigma_L L_t d Z_t\\ %edit below if you have to change dwt
+%         \iff &\rho (\eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t)\\
+%         &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
+%         \iff & \rho \eta_t d R_t - \rho \eta_t r_t d t + r_t w_t d t + \beta D_t d R_t  - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t\\
+%         &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
+%         \iff & - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - Y_t g d t - Y_t \sigma_Y d Z_t - L_t g d t - L_t \sigma_L d Z_t\\
+%         &= -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) d R_t = -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t})
+%     \end{aligned}\]
 \[
     \begin{aligned}
         &c_t + c_t^h = Y_t + L_t\\
         \iff & \rho w_t + \rho^h w^h = Y_t + L_t\\
-        \implies & \rho d w_t + \rho^h d w^h = d Y_t + d L_t  = Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + \sigma_L L_t d Z_t\\ %edit below if you have to change dwt
-        \iff &\rho (\eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t)  - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t)\\
-        &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
-        \iff & \rho \eta_t d R_t - \rho \eta_t r_t d t + r_t w_t d t + \beta D_t d R_t  - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t\\
-        &= Y_t g d t + Y_t \sigma_Y d Z_t + L_t g d t + L_t \sigma_L d Z_t\\
-        \iff & - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - Y_t g d t - Y_t \sigma_Y d Z_t - L_t g d t - L_t \sigma_L d Z_t\\
-        &= -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) d R_t = -\rho \eta_t d R_t - \beta D_t d R_t = -(\rho \eta_t + \beta D_t) (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t})
+        \implies & \rho d w_t + \rho^h d w^h \\ %edit below if you have to change dwt
+        \iff &\rho (\epsilon_t (d R_t - r_t d t)  + r_t w_t d_t - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t + d L_t)= d Y_t + d L_t \\
+        \iff &\rho (\epsilon_t (d R_t - r_t d t)  + r_t w_t d_t - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t)= d Y_t + (1 - \rho^h) d L_t\\
+        \iff &\rho (\epsilon_t (d R_t - r_t d t)  + r_t w_t d_t - c_t d t) + \rho^h(r_t D_t d t  - c_t^h d t)= Y_t g d t + Y_t \sigma_Y d Z_t + (1 - \rho^h)(L_t g d t + \sigma_L L_t d Z_t)\\
+        \iff &\rho \epsilon_t d R_t - \rho \epsilon_t r_t d t  + \rho r_t w_t d_t - \rho c_t d t + \rho^h r_t D_t d t  - \rho^h c_t^h d t\\
+        &= Y_t g d t + Y_t \sigma_Y d Z_t + (1 - \rho^h)L_t g d t + (1 - \rho^h) \sigma_L L_t d Z_t\\
+        \iff &\rho \epsilon_t d R_t =  \rho \epsilon_t r_t d t  - \rho r_t w_t d_t + \rho c_t d t - \rho^h r_t D_t d t  + \rho^h c_t^h d t\\
+        &+ Y_t g d t + Y_t \sigma_Y d Z_t + (1 - \rho^h)L_t g d t + (1 - \rho^h) \sigma_L L_t d Z_t\\
+        \iff & \rho \epsilon_t (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}) =  \rho \epsilon_t r_t d t  - \rho r_t w_t d_t + \rho c_t d t - \rho^h r_t D_t d t  + \rho^h c_t^h d t\\
+        &+ Y_t g d t + Y_t \sigma_Y d Z_t + (1 - \rho^h)L_t g d t + (1 - \rho^h) \sigma_L L_t d Z_t
     \end{aligned}\]
     
-    So we get:
-    \[
-    \begin{aligned}
-        &\mu_{P, t} d t + \sigma_{P, t } d Z_t =  \frac{-1}{\rho \eta_t + \beta D_t}(\kappa_{1,t} d t + \kappa_{2,t} d Z_t) - \frac{Y_t}{P_t} d t  
-    \end{aligned}
-    \]
-    where:
-    \[
-    (\kappa_{1,t} d t + \kappa_{2,t} d Z_t) = - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - (Y_t + L_t) g d t  - Y_t \sigma_Y d Z_t- L_t \sigma_L d Z_t    
-    \]
+
+    % So we get:
+    % \[
+    % \begin{aligned}
+    %     &\mu_{P, t} d t + \sigma_{P, t } d Z_t =  \frac{-1}{\rho \eta_t + \beta D_t}(\kappa_{1,t} d t + \kappa_{2,t} d Z_t) - \frac{Y_t}{P_t} d t  
+    % \end{aligned}
+    % \]
+    % where:
+    % \[
+    % (\kappa_{1,t} d t + \kappa_{2,t} d Z_t) = - \rho \eta_t r_t d t + r_t w_t d t   - \beta_t D_t r_t d t - c_t d t + \rho^h  r_t D_t d t - \rho^h c_t^h d t - (Y_t + L_t) g d t  - Y_t \sigma_Y d Z_t- L_t \sigma_L d Z_t    
+    % \]
     Matching coefficients on the $dZ_t$ terms we get:
-\[
+    \[
     \begin{aligned}
-        \sigma_{P, t}  = \frac{Y_t \sigma_Y + L_t \sigma_L}{\rho \eta_t + \beta D_t}
-    \end{aligned}
-\]
-where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
+        \rho \epsilon_t \sigma_{P, t} d Z_t = Y_t \sigma_Y d Z_t + (1 - \rho^h) \sigma_L L_t d Z_t\\
+        \iff \rho \epsilon_t \sigma_{P, t}  = Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t \\
+        \iff \sigma_{P, t} = \frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho \epsilon_t}
+    \end{aligned}    
+    \]
+    where in equilibrium our asset market clearing condition implies $\epsilon_t = P_t$ so we can write as:
+    \[
+        \begin{aligned}
+            \sigma_{P, t} = \frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho P_t}%\\
+            % \iff \boxed{\sigma_{P, t} = \frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho \eta_t w_t}}
+        \end{aligned}   
+    \]
+    where from Question c we have:
+    \[
+        P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta - 1 + \frac{\rho}{\rho^h}}
+    \]
+    so substituting that in we get:
+    \[
+        \sigma_{P, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\eta_t - 1 + \frac{\rho}{\rho^h}}{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t} \right)
+    \]
+
+% \[
+%     \begin{aligned}
+%         \sigma_{P, t}  = \frac{Y_t \sigma_Y + L_t \sigma_L}{\rho \eta_t + \beta D_t}
+%     \end{aligned}
+% \]
+% where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
 \section*{Question f}
 We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, t} + \frac{Y_t}{P_t} - r_t$. To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
 \[\begin{aligned}
