@@ -222,7 +222,7 @@ We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, 
 Then using our expression from Questions c and e we get:
 \[\begin{aligned}
     \pi_{R, t} = \left(\left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)\right)^2 \left(\frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}\right)\\
-    \boxed{\pi_{R, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right)^2 \left(\frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}\right)}
+    \boxed{\pi_{R, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right)^2 \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)}
 \end{aligned}\]
 % To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
 % \[\begin{aligned}
@@ -230,21 +230,21 @@ Then using our expression from Questions c and e we get:
 %     \iff 
 % \end{aligned}\]
 \section*{Question g}
-Recall in question c, the expression for price is:
+From the prompt, we've made the assumption that $\rho^{h}>\rho$. The intuition here means households are less patient than the bankers. Recall in question c, the expression for price is:
 \[
     P_t = \frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}    
 \]
-so we can see that increased leverage increases price. The intuition here is that with more leverage, you have more funds to put into the asset and due to there being net supply of 1 risky asset, this means the price of that asset goes up.
+so we can see that increased leverage decreases price. Intuitively, higher leverage means more of the funds that the banker uses for investments belong to the household. Since the households are more impatient, a greater share of the total wealth stream is consumed, so the price of the asset is lower by the market clearing condition.
 
 In question e, our volatility term is:
 \[
     \sigma_{P, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)    
 \]
-so we can see that as leverage increases, volatility decreases.
+so we can see that as leverage increases, volatility increases.Again, as leverage increases the stream of wealth is more dependent on the wealth process of the household. And so changes in the stream of household wealth are amplified in the dynamics of the total funds for investments. Since households are more impatient, we see more uncertainty and therefore more volatility. 
 
 In question f, the term for risk premium is:
 \[
-    \pi_{R, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right)^2 \left(\frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}\right)    
+    \pi_{R, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right)^2 \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)
 \]
-so we can see that as leverage increases, risk premium increases.
+so we can see that as leverage increases, the risk premium increases. This is intuitive as we have seen higher leverage means the volatility in the return on the risky asset is higher, so greater compensation is required to invest in the risky asset.
 \end{document}
