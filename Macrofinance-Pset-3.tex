@@ -123,33 +123,11 @@ Under the asset market clearing condition we have:
    &\epsilon_t = w_t + w_t^h = P_t   \\ 
     \iff &\frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2} = P_t
 \end{aligned}\]
-Using our expression for $P_t$ from (c), we can then write the relation between $\mu_{P, t}$ and $\sigma_{P, t }$ in state variables as:
+Using our expression for $P_t$ from (c), we can therefore write the relation between $\mu_{P, t}$ and $\sigma_{P, t }$ in state variables as:
 \[
     \mu_{P, t} d t + \sigma_{P, t} d Z_t =     
 \]
-\textbf{Option 2 starts here:}
-\[
-\begin{aligned}
-    &w_t + w_t^h = P_t   \\ 
-    \iff & d w_t + d w_t^h = d P_t \\
-    \iff & (\eta_t  (d R_t - r_t d t)  + r_t w_t d t + \beta_t D_t (d R_t - r_t d t) - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) =  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t} \\ %edit this and below if you have to change dwt
-    \iff &(\eta_t  d R_t - \eta_t r_t d t  + r_t w_t d t + \beta_t D_t d R_t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
-    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
-    \iff &((\eta_t + \beta_t D_t)  d R_t - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
-    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
-    \iff &((\eta_t + \beta_t D_t)  (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  ) - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t) \\
-    &=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t}\\
-    \iff & (\eta_t + \beta_t D_t)  (\frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  )  + K_t d t=  P_t \mu_{P, t} d t+P_t \sigma_{P, t} d Z_{t} \quad \text{(condensing terms)}\\
-    \iff & (\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + (\eta_t + \beta_t D_t) (\mu_{P, t} d t+\sigma_{P, t} d Z_{t}) + K_t d t= P_t (\mu_{P, t} d t+\sigma_{P, t} d Z_{t})\\
-    \iff & (\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t= (P_t - \eta_t - \beta_t D_t)(\mu_{P, t} d t+\sigma_{P, t} d Z_{t})
-\end{aligned}
-\]
-where $K_t d t= - \eta_t r_t d t  + r_t w_t d t - \beta_t D_t r_t d t - \beta_t r_t D_t d t  - c_t d t) + (r_t D_t d t  - c_t^h d t)$.
-So the relation we get between $\mu_{P, t}$ and $\sigma_{P, t }$ is:
-\[
-    \mu_{P, t} d t+\sigma_{P, t} d Z_{t} = \frac{(\eta_t + \beta_t D_t) \frac{Y_t}{P_t} d t + K_t d t}{(P_t - \eta_t - \beta_t D_t)}
-\]
-and where $\beta_t = \frac{Y_t + L_t + \mu_{P, t} - r_t}{\sigma_{P, t}^2}$.
+
 \section*{Question e}
 We use the goods market clearing condition and differentiate; then we plug in the dynamic budget constraints. Note that with the above conjectured process for $P_t$,
 $dR_t$ can be expressed as:
