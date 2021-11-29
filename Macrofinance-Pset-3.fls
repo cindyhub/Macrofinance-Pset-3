@@ -140,7 +140,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy
 OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.pdf
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.aux
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
