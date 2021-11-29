@@ -105,14 +105,21 @@ where $u(c_t) = \ln(c_t) $, $w_t$ is the endogenous state, and $Y_t$ is the exog
 \[
 V(w_t, Y_t, t) = e^{-\rho t} v(w_t, Y_t)    
 \]
-so that:
-\textbf{insert equation here on slide 18} 
-Per the slides, one can conjecture and verify the following form for $v(w, Y)$:
-\textbf{insert conjectured v eqn on slide 19}
-
-so following similar steps to the lecture, we conclude the following optimal $\epsilon_t$:
+Following the slides, for log utility we can guess and verify the following form for $v(w, Y)$:
 \[
-\epsilon_t = \frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}    
+v(w,Y) = A ln w + B f(Y)
+\]
+So that:
+\[
+ \mathcal{D} V(w_t, Y_t, t) = -\rho V dt + V_YE_t[dY_t] + \frac{1}{2}V_{YY}[dY_t.dY_t]+V_wE_t[dw_t]+\frac{1}{2}V_{ww}[dw_t.dw_t]
+\]
+Note that due to the log utility form,  we can separate out w and Y and do not have the usual cross terms in Ito's lemma. Taking FOCs we therefore have:
+\[
+\epsilon_t^* = \frac{-V_w}{w_tV_{ww}}\frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}
+\]
+where $v_w=\frac{A}{w_t}$ and $v_{ww}=-\frac{A}{w_t^2}$, so the optimal $\epsilon_t$:
+\[
+\epsilon_t^* = \frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2}    
 \]
 % So $dR_t$ can be expressed as:
 % \[
