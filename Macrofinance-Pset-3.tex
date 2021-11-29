@@ -84,7 +84,7 @@ and we use that $\eta_t = \frac{P_t}{w_t}$ from the prompt to ensure we are only
 \begin{aligned}
     P_{t}=\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) \frac{P_t}{\eta_t}\\
     \iff \eta_t P_t = \eta_t \frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}+\left(1-\frac{\rho}{\rho^{\mathrm{h}}}\right) P_t\\
-    \iff \boxed{P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta_t - 1 + \frac{\rho}{\rho^h}}}
+    \iff \boxed{P_t = \frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}}
 \end{aligned}
 \]
 \section*{Question d}
@@ -118,15 +118,14 @@ so following similar steps to the lecture, we conclude the following optimal $\e
 % \[
 %     d R_t = \frac{Y_t}{P_t} d t + \frac{d P_t}{P_t} =  \frac{Y_t}{P_t} d t + \mu_{P, t} d t+\sigma_{P, t} d Z_{t}  
 % \]
-Under the asset market clearing condition we have:
+Under the asset market clearing condition we can therefore write the relation between $\mu_{P, t}$ and $\sigma_{P, t }$ as:
 \[\begin{aligned}
    &\epsilon_t = w_t + w_t^h = P_t   \\ 
-    \iff &\frac{\frac{Y_t}{P_t} + \mu_{P, t} - r_t}{(\sigma_{P, t})^2} = P_t
+    \iff &\frac{ \mu_{P, t} + \frac{Y_t}{P_t} - r_t}{(\sigma_{P, t})^2} = P_t \\
+    \iff & \mu_{P, t} + \frac{Y_t}{P_t} - r_t = P_t(\sigma_{P, t})^2
 \end{aligned}\]
-Using our expression for $P_t$ from (c), we can therefore write the relation between $\mu_{P, t}$ and $\sigma_{P, t }$ in state variables as:
-\[
-    \frac{Y_t(\eta_t - 1 + \frac{\rho}{\rho^h})}{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t} + \mu_{P, t} - r_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t(\sigma_{P, t})^2}{\eta_t - 1 + \frac{\rho}{\rho^h}}
-\]
+Where from (c) we know $P_t = \frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}$.
+
 
 \section*{Question e}
 We use the goods market clearing condition and differentiate; then we plug in the dynamic budget constraints. Note that with the above conjectured process for $P_t$,
