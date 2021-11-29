@@ -190,11 +190,11 @@ Under the goods market clearing condition we have (where per the email exchange 
     \]
     where from Question c we have:
     \[
-        P_t = \frac{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t}{\eta - 1 + \frac{\rho}{\rho^h}}
+        P_t = \frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}
     \]
     so substituting that in we get:
     \[
-        \boxed{\sigma_{P, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\eta_t - 1 + \frac{\rho}{\rho^h}}{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t} \right)}
+        \boxed{\sigma_{P, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)}
     \]
 
 % \[
@@ -214,7 +214,8 @@ We now solve for risk premium which is $\pi_{R, t} = \mu_{R, t} - r_t = \mu_{P, 
 \]
 Then using our expression from Questions c and e we get:
 \[\begin{aligned}
-    \left(\left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\eta_t - 1 + \frac{\rho}{\rho^h}}{\frac{Y_{t} + L_t}{\rho^{\mathrm{h}}}\eta_t} \right)\right)^2 
+    \pi_{R, t} = \left(\left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right) \left(\frac{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}{Y_{t} + L_t} \right)\right)^2 \left(\frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}\right)\\
+    \boxed{\pi_{R, t} = \left(\frac{Y_t \sigma_Y + (1 - \rho^h) \sigma_L L_t}{\rho}\right)^2 \left(\frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}\right)}
 \end{aligned}\]
 % To do so, we first solve for $\mu_{P, t}$. Recall our expression we derived for $\mu_{P, t}$ and $\sigma_{P, t }$ is:
 % \[\begin{aligned}
@@ -222,5 +223,9 @@ Then using our expression from Questions c and e we get:
 %     \iff 
 % \end{aligned}\]
 \section*{Question g}
+Recall in question c, the expression for price is:
+\[
+    P_t = \frac{Y_{t} + L_t}{\rho^h + \frac{1}{\eta_t}(\rho-\rho^h)}    
+\]
 
 \end{document}
