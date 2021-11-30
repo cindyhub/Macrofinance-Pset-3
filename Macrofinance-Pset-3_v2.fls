@@ -2,8 +2,8 @@ PWD /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN
 INPUT /usr/local/texlive/2020/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.tex
-OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.log
+INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.tex
+OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.log
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
@@ -62,9 +62,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.aux
-INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.aux
-OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.aux
+INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.aux
+INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.aux
+OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -137,9 +137,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.pdf
+OUTPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.pdf
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3.aux
+INPUT /Volumes/GoogleDrive/My Drive/Courses/Second Year/Fall_2021/Macrofinance_FIN637/Assignments/Pset_3/Macrofinance-Pset-3/Macrofinance-Pset-3_v2.aux
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
